@@ -27,14 +27,14 @@ describe('Calculator', () => {
   });
 
   // Test case: Negative numbers
-//   it('should handle negative numbers correctly', () => {
-//     expect(calc(-8, '+', 5)).toBe(-3);
-//   });
+  it('should handle negative numbers correctly', () => {
+    expect(calc(-8, '+', 5)).toBe(-3);
+  });
 
   // Test case: Decimal numbers
-//   it('should handle decimal numbers correctly', () => {
-//     expect(calc(3.5, '*', 2)).toBe(7);
-//   });
+  it('should handle decimal numbers correctly', () => {
+    expect(calc(3.5, '*', 2)).toBe(7);
+  });
 
   // Test case: Order of operations
 //   it('should follow the correct order of operations', () => {
