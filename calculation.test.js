@@ -37,9 +37,9 @@ describe('Calculator', () => {
   });
 
   // Test case: Order of operations
-//   it('should follow the correct order of operations', () => {
-//     expect(calc(2, '+', 3, '*', 4)).toBe(14);
-//   });
+  it('should follow the correct order of operations', () => {
+    expect(calc(2, '+', 3, '*', 4)).toBe(14);
+  });
 
   // Test case: Invalid operator
   it('should throw an error for an invalid operator', () => {
