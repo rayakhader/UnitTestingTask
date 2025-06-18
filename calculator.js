@@ -2,16 +2,22 @@ function calculate(...args) {
     let numbers = [];
     let operators = [];
 
-    for(let i = 0; i < args.length; i++) {
-        if (typeof args[i] === 'number') {
-            numbers.push(args[i]);
-        } else if (typeof args[i] === 'string' && ['+', '-', '*', '/'].includes(args[i])) {
-            operators.push(args[i]);
-        }else if ((typeof args[i] === 'string') && (Number.isNaN(Number(args[i])) )) {
+    if (typeof args[0] !== 'number') { throw new Error("Invalid input type"); }
+    if(args[0] <=1000){
+        numbers.push(args[0]);
+    }
+    for(let i = 1; i < args.length; i+=2) {
+        let operator = args[i];
+        let number = args[i + 1];
+        if (typeof operator !== 'string' || !['+', '-', '*', '/'].includes(operator)) {
             throw new Error("Invalid operator");
-        } 
-        else {
+        }
+        if (typeof number !== 'number') {
             throw new Error("Invalid input type");
+        }
+        if (number <= 1000) {
+            operators.push(operator);
+            numbers.push(number);
         }
     }
  
@@ -30,8 +36,8 @@ function calculate(...args) {
         }else {
             i++;
         }
-
        }
+
        return operators.reduce((acc, operator, index) => {
         if (operator === '+') {
             return acc + numbers[index + 1];
